@@ -1,0 +1,47 @@
+# Mac OS X
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Git
+
+# KDiff3
+*.orig
+
+# Vim
+*.swp
+
+# Emacs
+*~
+*#
+
+# Make
+*.[oa]
+
+# Maven
+bin/
+maven/
+target/
+
+# Eclipse
+.project/
+.classpath/
+.settings/
+
+# Netbeans
+nb-configuration.xml
+*.nbi
+
+# Intellij IDEA
+.idea/
+*.iml
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.jsfdia
+*.NavData
+MANIFEST.MF

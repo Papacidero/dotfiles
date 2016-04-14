@@ -1,0 +1,20 @@
+[user]
+	name = Carlos Eduardo Papacidero
+	email = carlos.papacidero@venturus.org.br
+[core]
+	editor = vim
+	excludesfile = /Users/vntcapa/.gitignore-global
+[diff]
+	tool = kdiff3
+[difftool]
+	prompt = false
+[push]
+	default = simple
+[merge]
+	tool = kdiff3
+[mergetool]
+	prompt = false
+[alias]
+	last = log -1 --all --decorate --stat
+	unstage = reset HEAD --
+	discard = checkout --
