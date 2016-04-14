@@ -12,5 +12,5 @@ To create a link for a .dotfile use
 Hard Link
 ln originalfile linkedfile
 
-Soft Link (Not Works Fine)
+Soft Link (Not Recommended)
 ln -s originalfile linkedfile

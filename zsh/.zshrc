@@ -1,13 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-export PATH=/usr/local/bin:$PATH
-export JAVA_HOME=$(/usr/libexec/java_home)
-export M2_HOME="/usr/local/opt/maven/libexec"
-export MAVEN_OPTS="-Xms256m -Xmx512m"
-export MYSQL_HOME="usr/local/opt/mysql/libexec"
-export ANT_HOME="/usr/local/opt/ant/libexec"
-export NODE_ENV=development
+source $HOME/.dotfiles/zsh/.env
 
 # export CATALINA_HOME="/Users/vntcapa/Workspace/advhvs/server/bin"
 # export CATALINA_HOME="/Library/Tomcat"
