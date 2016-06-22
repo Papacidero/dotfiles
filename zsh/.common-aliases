@@ -1,0 +1,52 @@
+# Functions
+sqlSwitch() {
+    if [[ $1 == 'start' ]]; then
+        mysql.server start
+    elif [[ $1 == 'stop' ]]; then
+        mysql.server stop
+    else
+        printf "\nSQL Switch\n\n$ sql start | Will start mysql\n$ sql stop  | Will stop mysql\n"
+    fi
+    echo $1
+}
+
+c() {
+    if [[ $1 == 'start' ]]; then
+        catalina start
+    elif [[ $1 == 'stop' ]]; then
+        catalina stop -force
+    elif [[ $1 == 'log' ]]; then
+        t /usr/local/Cellar/tomcat/8.0.35/libexec/logs/catalina.out
+    else
+        clear
+    fi
+    echo $1
+}
+
+# Common Aliases
+alias papa='echo Papa'
+alias sql=sqlSwitch
+alias na='atom ~/.dotfiles/zsh/.common-aliases'
+alias src='source ~/.zshrc'
+alias c=c
+alias changelog="git log --oneline --decorate"
+alias linketurus="ssh vntcapa@172.24.20.54"
+alias fotos="open smb://172.24.25.4/Geral/Corporativo/"
+alias localnpm="npm config set http://vntsrvs201:4873/"
+alias globalnpm="npm config delete registry"
+alias editautojump="atom /Users/vntcapa/Library/autojump/autojump.txt"
+alias url="open -a /Applications/Google\ Chrome.app"
+alias trac="open -a /Applications/Google\ Chrome.app http://trac-s2/projects/advhvs/"
+alias gitlab="open -a /Applications/Google\ Chrome.app http://http://vntsrvgitlab01/"
+alias s2ui="open -a /Applications/Google\ Chrome.app http://s2ui/landing/"
+alias char="open -a /Applications/Google\ Chrome.app http://dev.w3.org/html5/html-author/charref"
+alias zshrc='atom ~/.zshrc' # Quick access to the ~/.zshrc file
+alias localhost='python -m SimpleHTTPServer 8000'
+
+# Projects Alias
+alias icheck="ember s --proxy http://localhost:3000"
+alias imigrate="cd /Users/vntcapa/Development/Workspace/icheck/icheck-server/ && npm run-script db:migrate && cd -"
+alias idrop="cd /Users/vntcapa/Development/Workspace/icheck/icheck-server/ && npm run-script db:drop && cd -"
+alias icreate="cd /Users/vntcapa/Development/Workspace/icheck/icheck-server/ && npm run-script db:create && cd -"
+alias ic="cd /Users/vntcapa/Development/Workspace/icheck/icheck-client/"
+alias is="cd /Users/vntcapa/Development/Workspace/icheck/icheck-server/"
