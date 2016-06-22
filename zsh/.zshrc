@@ -2,13 +2,15 @@
 export ZSH=$HOME/.oh-my-zsh
 
 source $HOME/.dotfiles/zsh/.env
+source $HOME/.dotfiles/zsh/.common-aliases
 
-# export CATALINA_HOME="/Users/vntcapa/Workspace/advhvs/server/bin"
+export CATALINA_PID="/usr/local/Cellar/tomcat/8.0.35/bin/catalina.pid"
+# export CATALINA_HOME="/usr/local/Cellar/tomcat/8.0.35/libexec"
 # export CATALINA_HOME="/Library/Tomcat"
 #export CATALINA_HOME=/Users/vntcapa/Workspace/advhvs/server/apache-tomcat-8.0.20
 #export CATALINA_HOME=/Users/vntcapa/Servers/apache-tomcat-8.0.9
-export PATH="$PATH":/usr/local/apache-tomcat-8.0.12/highcharts-exporter/phantomjs-2.0.0-macosx/bin
-export PATH="$PATH":/usr/local/mysql/bin
+# export PATH="$PATH":/usr/local/apache-tomcat-8.0.12/highcharts-exporter/phantomjs-2.0.0-macosx/bin
+# export PATH="$PATH":/usr/local/mysql/bin
 #brew : curl - expose proxy settings
 
 unset http_proxy
