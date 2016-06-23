@@ -12,21 +12,21 @@ sqlSwitch() {
 
 c() {
     if [[ $1 == 'start' ]]; then
-        catalina start
+        echo 'Starting Catalina...' && catalina start && echo 'Catalina Started!'
     elif [[ $1 == 'stop' ]]; then
-        catalina stop -force
+        echo 'Stopping Catalina...' && catalina stop -force && echo 'Catalina Stopped!'
     elif [[ $1 == 'log' ]]; then
         t /usr/local/Cellar/tomcat/8.0.35/libexec/logs/catalina.out
+    elif [[ $1 == 'restart' ]]; then
+        echo 'Restarting Catalina...' &&  c stop && c start && c log && echo 'Catalina Restarted!'
     else
         clear
     fi
-    echo $1
 }
 
 # Common Aliases
-alias papa='echo Papa'
 alias sql=sqlSwitch
-alias na='atom ~/.dotfiles/zsh/.common-aliases'
+alias na='atom ~/.dotfiles/'
 alias src='source ~/.zshrc'
 alias c=c
 alias changelog="git log --oneline --decorate"
