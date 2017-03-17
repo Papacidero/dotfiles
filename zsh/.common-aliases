@@ -1,4 +1,6 @@
 # Functions
+
+# Sql
 sqlSwitch() {
     if [[ $1 == 'start' ]]; then
         mysql.server start
@@ -7,16 +9,18 @@ sqlSwitch() {
     else
         printf "\nSQL Switch\n\n$ sql start | Will start mysql\n$ sql stop  | Will stop mysql\n"
     fi
-    echo $1
+    echo $i1
 }
 
+
+# Catalina
 c() {
     if [[ $1 == 'start' ]]; then
         echo 'Starting Catalina...' && catalina start && echo 'Catalina Started!'
     elif [[ $1 == 'stop' ]]; then
         echo 'Stopping Catalina...' && catalina stop -force && echo 'Catalina Stopped!'
     elif [[ $1 == 'log' ]]; then
-        t /usr/local/Cellar/tomcat/8.0.35/libexec/logs/catalina.out
+        tail -f /usr/local/Cellar/tomcat/8.5.4/libexec/logs/catalina.out
     elif [[ $1 == 'restart' ]]; then
         echo 'Restarting Catalina...' &&  c stop && c start && c log && echo 'Catalina Restarted!'
     else
@@ -24,29 +28,69 @@ c() {
     fi
 }
 
+
+# iCheck Project 
+i() {
+    if [[ $1 == 'check' ]]; then
+        ember s --proxy http://localhost:3000
+    elif [[ $1 == 'migrate' || $1 == 'm'  ]]; then
+        cd /Users/vntcapa/Development/Workspace/icheck/icheck-server/ && npm run-script db:migrate && cd -
+    elif [[ $1 == 'drop' || $1 == 'd' ]]; then
+        cd /Users/vntcapa/Development/Workspace/icheck/icheck-server/ && npm run-script db:drop && cd -
+    elif [[ $1 == 'c' ]]; then
+        cd /Users/vntcapa/Development/Workspace/icheck/icheck-client/
+    elif [[ $1 == 's' ]]; then
+        cd /Users/vntcapa/Development/Workspace/icheck/icheck-server/
+    else
+        i
+    fi
+}
+
+
+start() {
+    echo 'Select project to start'
+    select PROJECT in cdb icheck none
+    do
+       case $PROJECT in
+          cdb) 
+             cd /Users/vntcapa/Development/Workspace/CDB/filesystem/fenv && npm run deploy
+             break
+             ;;
+          icheck)
+             cd /Users/vntcapa/Development/Workspace/icheck/icheck-client/ && ember s --proxy http://localhost:3000
+             break
+          ;;
+          none) 
+             break 
+          ;;
+          *) echo "ERROR: Invalid selection" 
+            break   
+          ;;
+       esac
+    done
+}
+
 # Common Aliases
 alias sql=sqlSwitch
-alias na='atom ~/.dotfiles/'
+alias na='code ~/.dotfiles/'
 alias src='source ~/.zshrc'
-alias c=c
 alias changelog="git log --oneline --decorate"
 alias linketurus="ssh vntcapa@172.24.20.54"
 alias fotos="open smb://172.24.25.4/Geral/Corporativo/"
-alias localnpm="npm config set http://vntsrvs201:4873/"
-alias globalnpm="npm config delete registry"
-alias editautojump="atom /Users/vntcapa/Library/autojump/autojump.txt"
+alias dataset="open smb://172.24.25.4/Privado/Pesquisa_e_Desenvolvimento/S2/ADVHVS/"
+alias npmlocal="npm set registry http://s2ui:4873"
+alias npmglobal="npm config delete registry"
+alias npms2="npm config set @apple:registry https://npm.apple.com/"
+alias editautojump="code /Users/vntcapa/Library/autojump/autojump.txt"
 alias url="open -a /Applications/Google\ Chrome.app"
 alias trac="open -a /Applications/Google\ Chrome.app http://trac-s2/projects/advhvs/"
 alias gitlab="open -a /Applications/Google\ Chrome.app http://http://vntsrvgitlab01/"
 alias s2ui="open -a /Applications/Google\ Chrome.app http://s2ui/landing/"
 alias char="open -a /Applications/Google\ Chrome.app http://dev.w3.org/html5/html-author/charref"
-alias zshrc='atom ~/.zshrc' # Quick access to the ~/.zshrc file
+alias zshrc='code ~/.zshrc' # Quick access to the ~/.zshrc file
 alias localhost='python -m SimpleHTTPServer 8000'
+alias php-local='php -S localhost:8000'
+alias gpp="git pull -p"
 
-# Projects Alias
-alias icheck="ember s --proxy http://localhost:3000"
-alias imigrate="cd /Users/vntcapa/Development/Workspace/icheck/icheck-server/ && npm run-script db:migrate && cd -"
-alias idrop="cd /Users/vntcapa/Development/Workspace/icheck/icheck-server/ && npm run-script db:drop && cd -"
-alias icreate="cd /Users/vntcapa/Development/Workspace/icheck/icheck-server/ && npm run-script db:create && cd -"
-alias ic="cd /Users/vntcapa/Development/Workspace/icheck/icheck-client/"
-alias is="cd /Users/vntcapa/Development/Workspace/icheck/icheck-server/"
+#Subscribing Common Alias Plugin
+alias la='ls -lAFh'   #long list,show almost all,show type,human readable

@@ -4,7 +4,7 @@ export ZSH=$HOME/.oh-my-zsh
 source $HOME/.dotfiles/zsh/.env
 source $HOME/.dotfiles/zsh/.common-aliases
 
-export CATALINA_PID="/usr/local/Cellar/tomcat/8.0.35/bin/catalina.pid"
+export CATALINA_PID="/usr/local/Cellar/tomcat/8.5.4/bin/catalinapid"
 # export CATALINA_HOME="/usr/local/Cellar/tomcat/8.0.35/libexec"
 # export CATALINA_HOME="/Library/Tomcat"
 #export CATALINA_HOME=/Users/vntcapa/Workspace/advhvs/server/apache-tomcat-8.0.20
@@ -64,7 +64,7 @@ ZSH_THEME="papacidero"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump common-aliases brew osx npm servers git-extras vagrant)
+plugins=(git autojump common-aliases brew osx npm servers git-extras zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
