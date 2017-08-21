@@ -64,7 +64,7 @@ ZSH_THEME="papacidero"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump common-aliases osx npm servers git-extras zsh-autosuggestions)
+plugins=(git autojump common-aliases osx npm servers git-extras)
 
 source $ZSH/oh-my-zsh.sh
 
