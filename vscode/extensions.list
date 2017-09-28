@@ -1,0 +1,13 @@
+code --install-extension
+PeterJausovec.vscode-docker
+WallabyJs.quokka-vscode
+akamud.vscode-javascript-snippet-pack
+christian-kohler.path-intellisense
+dbaeumer.vscode-eslint
+dzannotti.vscode-babel-coloring
+kenhowardpdx.vscode-gist
+mohsen1.prettify-json
+robertohuertasm.vscode-icons
+robinbentley.sass-indented
+xabikos.JavaScriptSnippets
+xabikos.ReactSnippets
