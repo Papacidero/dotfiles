@@ -1,9 +1,10 @@
 config:
+    echo "Starting configuration and installation..." 
     make install-brew && \
     make install-apps && \
     make install-install-oh-my-zsh && \
     make link-dotfiles && \
-    echo "You user is succesfuly configured !"
+    echo "You user is succesfuly configured!"
 
 install-brew:
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
