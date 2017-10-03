@@ -1,7 +1,8 @@
 config:
 	echo "Starting configuration and installation..." && \
+	make install-brew && \
 	make install-apps && \
-	make install-install-oh-my-zsh && \
+	make install-oh-my-zsh && \
 	make link-dotfiles && \
 	echo "You user is succesfuly configured!"
 
@@ -12,7 +13,7 @@ install-brew:
 
 install-apps:
 	echo "Installing Apps..." && \
-	brew cask install iterm2 google-chrome visual-studio-code skype telegram docker && \
+	brew cask install iterm2 google-chrome visual-studio-code skype telegram && \
 	brew install autojump git-extras node zsh zsh-completions git && \
 	echo "Installing Apps Finished!"
 
@@ -27,8 +28,7 @@ link-dotfiles:
 	rm -rf ../.oh-my-zsh/themes/papacidero.zsh-theme && \
 	ln zsh/.oh-my-zsh/themes/papacidero.zsh-theme ../.oh-my-zsh/themes/papacidero.zsh-theme && \
 	rm -rf ../.oh-my-zsh/plugins/common-aliases/common-aliases.plugin.zsh && ln zsh/.oh-my-zsh/plugins/common-aliases/common-aliases.plugin.zsh ../.oh-my-zsh/plugins/common-aliases/common-aliases.plugin.zsh && \
-	rm -rf ~/Library/Application\ Support/Code/User/settings.json && ln  vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-	echo "Linking Dotfiles Finished!" && \
+	echo "Linking Dotfiles Finished!"
 
 
 vscode-sync:
@@ -38,6 +38,7 @@ vscode-sync:
 	echo "Synching vscode Finished!"
 
 vscode-link-settings:
+	rm -rf ~/Library/Application\ Support/Code/User/settings.json && ln vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 	ln ~/Library/Application\ Support/Code/User/settings.json settings.json
 	
 vscode-extensions-list:
