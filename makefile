@@ -13,7 +13,7 @@ install-brew:
 
 install-apps:
 	echo "Installing Apps..." && \
-	brew cask install iterm2 google-chrome visual-studio-code skype telegram && \
+	brew cask install iterm2 google-chrome visual-studio-code skype telegram docker && \
 	brew install autojump git-extras node zsh zsh-completions git && \
 	echo "Installing Apps Finished!"
 
