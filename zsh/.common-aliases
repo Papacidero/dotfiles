@@ -1,50 +1,13 @@
-# Functions
-
-# Sql
-sqlSwitch() {
-    if [[ $1 == 'start' ]]; then
-        mysql.server start
-    elif [[ $1 == 'stop' ]]; then
-        mysql.server stop
-    else
-        printf "\nSQL Switch\n\n$ sql start | Will start mysql\n$ sql stop  | Will stop mysql\n"
-    fi
-    echo $i1
-}
-
-
-# Catalina
-c() {
-    if [[ $1 == 'start' ]]; then
-        echo 'Starting Catalina...' && catalina start && echo 'Catalina Started!'
-    elif [[ $1 == 'stop' ]]; then
-        echo 'Stopping Catalina...' && catalina stop -force && echo 'Catalina Stopped!'
-    elif [[ $1 == 'log' ]]; then
-        tail -f /usr/local/Cellar/tomcat/8.5.4/libexec/logs/catalina.out
-    elif [[ $1 == 'restart' ]]; then
-        echo 'Restarting Catalina...' &&  c stop && c start && c log && echo 'Catalina Restarted!'
-    else
-        clear
-    fi
-}
 
 # Common Aliases
 alias sql=sqlSwitch
 alias na='code ~/.dotfiles/'
 alias src='source ~/.zshrc'
 alias changelog="git log --oneline --decorate"
-alias linketurus="ssh vntcapa@172.24.20.54"
-alias fotos="open smb://172.24.25.4/Geral/Corporativo/"
-alias dataset="open smb://172.24.25.4/Privado/Pesquisa_e_Desenvolvimento/S2/ADVHVS/"
 alias npmlocal="npm set registry http://s2ui:4873"
 alias npmglobal="npm config delete registry"
-alias npms2="npm config set @apple:registry https://npm.apple.com/"
 alias editautojump="code /Users/vntcapa/Library/autojump/autojump.txt"
 alias url="open -a /Applications/Google\ Chrome.app"
-alias trac="open -a /Applications/Google\ Chrome.app http://trac-s2/projects/advhvs/"
-alias gitlab="open -a /Applications/Google\ Chrome.app http://http://vntsrvgitlab01/"
-alias s2ui="open -a /Applications/Google\ Chrome.app http://s2ui/landing/"
-alias char="open -a /Applications/Google\ Chrome.app http://dev.w3.org/html5/html-author/charref"
 alias zshrc='code ~/.zshrc' # Quick access to the ~/.zshrc file
 alias localhost='python -m SimpleHTTPServer 8000'
 alias php-local='php -S localhost:8000'
