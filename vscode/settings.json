@@ -1,4 +1,49 @@
 {
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "Monokai"
+  "diffEditor.ignoreTrimWhitespace": false,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.fontSize": 13,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": false,
+  "workbench.editor.enablePreview": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "bracketPairColorizer.depreciation-notice": false,
+  "[css]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "diffEditor.maxComputationTime": 0,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.codeActionsOnSave": {
+  
+  },
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": false,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": true,
+    "javascript": true,
+    "json": true,
+    "properties": false,
+    "typescript": false,
+    "html": false
+  },
+  "github.copilot.advanced": {
+  },
+  "editor.maxTokenizationLineLength": 1e+78,
+  "[scss]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "editor.accessibilitySupport": "off",
 }
