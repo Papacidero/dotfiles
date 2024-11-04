@@ -6,17 +6,39 @@
 # Function to set the nameserver to Google's DNS
 set_nameserver() {
     echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+
+# Function to update apk repositories and install openssh
+install_openssh() {
+    apk update
+    apk add openssh
+    ssh-keygen -V
 }
 
 # Function to install the shadow package using apk (Alpine Linux package manager)
 # This is used to have chsh available as well
 install_shadow() {
+    apk update
     apk add shadow
+    chsh --version
 }
 
 # Function to install zsh using apk (Alpine Linux package manager)
 install_zsh() {
+    apk update
     apk add zsh
+}
+
+# Function to install Python using apk (Alpine Linux package manager)
+install_python() {
+    apk update
+    apk add python3
+    # ln -sf python3 /usr/bin/python
+    python --version
+}
+
+# Function to set git core.autocrlf to input globally this is to avoid difference between windows and linux
+set_git_autocrlf() {
+    git config --global core.autocrlf input
 }
 
 # Function to install oh-my-zsh
